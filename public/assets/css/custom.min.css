@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root {
+    --navy-blue: #0F172A;
+    --white: #FFFFFF;
+    --primary-blue: #3481C6;
+}
+
+body {
+    font-family: "Inter", sans-serif !important;
+}
+
+.text-navy-blue {
+    color: var(--navy-blue);
+}
+
+.auth-page-content h5 {
+    color: var(--navy-blue);
+    font-weight: 700;
+    font-size: 30.63px;
+    line-height: 40px;
+    text-align: center;
+
+}
+
+
+.auth-page-content .form-control {
+    height: 59px;
+    border: 1px solid var(--navy-blue);
+}
+
+.auth-page-content .btn-info {
+    background-color: #3481C6;
+    border-color: #3481C6;
+    border-radius: 4px;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+.device-detail-container h5 {
+    font-weight: 500;
+    color: var(--navy-blue);
+    font-size: 24px;
+    line-height: 40px;
+}
+
+.device-detail-container .card {
+    border: 1px solid #0000000D;
+    background-color: var(--white);
+}
+
+.device-detail-container .title {
+    font-weight: 400;
+    font-size: 16.59px;
+    line-height: 26px;
+    color: var(--navy-blue);
+}
+
+.device-detail-container .value {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+    color: var(--navy-blue);
+}
+
+.device-detail-container .value-link {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+    color: #0070FF;
+    text-decoration: underline;
+}
+
+.device-detail-container .value-success {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+    color: #3CBB00;
+}
+
+.device-info-container {
+    margin-top: 10px;
+}
+
+.dropdown-menu-style {
+    background: var(--white) !important;
+}
