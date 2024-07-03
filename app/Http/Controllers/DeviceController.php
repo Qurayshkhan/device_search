@@ -16,7 +16,7 @@ class DeviceController extends Controller
         return view('device.index');
     }
 
-    public function deviceDetails(Request $request)
+    public function deviceResults(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'serial_number' => 'required',
@@ -35,10 +35,8 @@ class DeviceController extends Controller
             if ($guzzleRequest->getStatusCode() == Helpers::SUCCESS_STATUS_CODE) {
                 $device = json_decode($guzzleRequest->getBody(), true);
                 if (count($device['items']) > 0) {
-                    $deviceCollection = collect($device['items'])->first();
-                    $deviceInfoArray = $this->getDeviceInfo($deviceCollection['uuid']);
-                    $deviceInfo = json_decode(json_encode($deviceInfoArray));
-                    return view('device.device-detail', compact('deviceInfo'));
+                    $devices = json_decode(json_encode($device['items']));
+                    return view('device.search-devices', compact('devices'));
                 }
             }
             return redirect()->back()->with('error', 'No Record Found');
@@ -46,6 +44,16 @@ class DeviceController extends Controller
             $response = json_decode($e->getResponse()->getBody()->getContents(), true);
             $errorMessage = $response['detail'] ?? 'An error occurred';
             return redirect()->back()->with('error', $errorMessage);
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', $e->getMessage());
+        }
+    }
+
+    public function deviceDetail($uuid)
+    {
+        try {
+            $deviceInfo = json_decode(json_encode($this->getDeviceInfo($uuid)));
+            return view('device.device-detail', compact('deviceInfo'));
         } catch (\Exception $e) {
             return redirect()->back()->with('error', $e->getMessage());
         }
