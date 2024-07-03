@@ -31,7 +31,7 @@
                                     <h5 class="">View Device Info</h5>
                                 </div>
                                 <div class="p-2 mt-4">
-                                    <form action="{{ route('device.device_details') }}" method="POST"
+                                    <form action="{{ route('device.device_results') }}" method="POST"
                                         onsubmit="handleContinue()">
                                         @csrf
                                         <div class="mb-2">

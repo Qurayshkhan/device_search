@@ -78,6 +78,13 @@ body {
     color: #3CBB00;
 }
 
+.device-detail-container .value-error {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+    color: red;
+}
+
 .device-info-container {
     margin-top: 10px;
 }
