@@ -16,5 +16,5 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [DeviceController::class, 'searchDevice'])->name('device.search_device');
-Route::post('/', [DeviceController::class, 'deviceResults'])->name('device.device_results');
-Route::get('device-detail/{uuid}', [DeviceController::class, 'deviceDetail'])->name('device.device_detail');
+Route::post('/', [DeviceController::class, 'deviceDetails'])->name('device.device_detail');
+// Route::get('device-detail/{uuid}', [DeviceController::class, 'deviceDetail'])->name('device.device_detail');
